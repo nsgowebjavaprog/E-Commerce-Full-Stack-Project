@@ -31,7 +31,8 @@ Django, React, PostgreSQL, CORS,
 -- Cart UI Logic
 -- Connecting React with Django APIs
 
-
+#### Day-01
+---
 ## Backend Setup
 ```
 pip install django djangorestframework psycopg2-binary python-dotenv
@@ -49,39 +50,53 @@ pip install npm
 ```
 npm create vite@latest
 ```
+## DataBase
 ```
+psql -U postgres
+```
+if above not working Then,
 
 ```
+Windows key → type SQL Shell (psql) → Open
+```
+```
+enter 4 to 5 times
+```
+we will get
+```
+postgres=#
+```
+then
+```
+CREATE DATABASE ecommerce_db;
+```
+```
+\l
+```
+```
+\q
+```
+```
+python manage.py migrate
 ```
 
+### Now,More about Project
+```
+python manage.py createsuperuser
 ```
 ```
-
+Username:      admin
+Email address: nagarajloni123@gmail.com
+Password:      admin
+```
+## Run Application Now:
+```
+python manage.py runserver
 ```
 ```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
+http://127.0.0.1:8000/
 ```
 
-```
-```
+#### Day-02
+---
 
-```
-```
-
-```
-```
-
-```
