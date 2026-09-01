@@ -31,6 +31,7 @@ Django, React, PostgreSQL, CORS,
 -- Cart UI Logic
 -- Connecting React with Django APIs
 
+---
 #### Day-01
 ---
 ## Backend Setup
@@ -97,6 +98,7 @@ python manage.py runserver
 http://127.0.0.1:8000/
 ```
 
+---
 #### Day-02
 ---
 
