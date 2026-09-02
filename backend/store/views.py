@@ -1,3 +1,24 @@
+# With Seializers
+
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .models import Product, Category
+from .serializers import ProductSerializer, CategorySerializer
+
+@api_view(['GET'])
+def get_products(request):
+    products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_categories(request):
+    categories = Category.objects.all()
+    serializer = CategorySerializer(categories, many=True)
+    return Response(serializer.data)
+
+# Without Serializer
+'''
 from django.http import JsonResponse
 
 def home(request):
@@ -5,3 +26,4 @@ def home(request):
         'message': 'welcome to the learning with project'
     }
     return JsonResponse(data)
+'''

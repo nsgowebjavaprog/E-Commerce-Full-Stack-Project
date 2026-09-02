@@ -102,3 +102,11 @@ http://127.0.0.1:8000/
 #### Day-02
 ---
 
+# Create models
+
+![alt text](<Screenshot 2026-09-02 184659.png>)
+
+```
+npm install tailwindcss @tailwindcss/vite
+```
+

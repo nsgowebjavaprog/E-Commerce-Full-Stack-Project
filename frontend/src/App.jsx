@@ -13,7 +13,7 @@ function App(){
   return(
     <div>
       <h1>Message from Backend: </h1>
-      <p>{message || 'Loading....'}</p>
+      <p>{message || 'WelCome to E-Commerce Store.!'}</p>
     </div>
   );
 
