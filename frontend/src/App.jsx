@@ -1,21 +1,11 @@
-import {useEffect, useState} from "react"
+import ProductList from "../pages/ProductList";
 
 function App(){
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/api')
-    .then(Response => Response.json())
-    .then(data => setMessage(data.message))
-    .catch(error => console.log('Error fecting msg', error));
-  }, []);
-
-  return(
+  return (
     <div>
-      <h1>Message from Backend: </h1>
-      <p>{message || 'WelCome to E-Commerce Store.!'}</p>
+        <ProductList/>
     </div>
   );
-
 }
+
 export default App;
