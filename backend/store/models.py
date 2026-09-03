@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# 1
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True)
@@ -8,6 +9,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+# 2
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
@@ -18,7 +20,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+   
+# 3    
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=15, blank=True)
@@ -26,7 +29,8 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-    
+   
+# 4 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -34,7 +38,8 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order {self.id}"
-    
+
+# 5    
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -44,6 +49,7 @@ class OrderItem(models.Model):
     def __str__(self):
         return f"{self.quantity} x {self.product.name}"
 
+# 6
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -54,7 +60,8 @@ class Cart(models.Model):
     @property
     def total(self):
         return sum(item.subtotal for item in self.items.all())
-    
+
+# 7    
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
