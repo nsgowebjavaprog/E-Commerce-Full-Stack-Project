@@ -17,7 +17,7 @@ function Navbar() {
     return (
         <nav className='bg-white shadow-md px-6 py-6 flex justify-between items-center fixed w-full top-0 z-50'>
             <Link to='/' className='text-2xl font-bold text-gray-800'>
-             🛍️ MohitCart
+             🛍️ ECoM
             </Link>
 
             <div className='flex items-center gap-6'>
